@@ -1,19 +1,20 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
-import logo from "../../../public/Logo Escuela.svg";
-import logo1 from "../../../public/Logo ecuela.svg";
+import { useLocation, useNavigate } from "react-router-dom";
+import logo1 from "../../assets/logo ecuela.svg";
 
 const Navbar = () => {
   const location = useLocation();
 
   const seleccionado =
-    "max-lg:border-b max-lg:py-1 relative lg:after:absolute lg:after:bg-indigo-900 lg:after:w-full lg:after:h-[2px] lg:after:block lg:after:-bottom-1 lg:after:transition-all lg:after:duration-300";
+    "max-lg:border-b max-lg:py-2 relative lg:after:absolute lg:after:bg-indigo-900 lg:after:w-full lg:after:h-[2px] lg:after:block lg:after:-bottom-1 lg:after:transition-all lg:after:duration-300 lg:after:mb-0";
   const noSeleccionado =
-    "max-lg:border-b max-lg:py-1 relative lg:hover:after:absolute lg:after:bg-indigo-900 lg:after:w-0 lg:hover:after:w-full lg:hover:after:h-[2px] lg:after:block lg:after:-bottom-1 lg:after:transition-all lg:after:duration-300";
+    "max-lg:border-b max-lg:py-1 relative lg:hover:after:absolute lg:after:bg-indigo-900 lg:after:w-0 lg:hover:after:w-full lg:hover:after:h-[2px] lg:after:block lg:after:-bottom-1 lg:after:transition-all lg:after:duration-300 lg:after:mb-0";
+  
+  const navigate = useNavigate()
 
   return (
     <header className="font-[sans-serif] min-h-[60px] tracking-wide relative z-50">
-      <div className="flex flex-wrap items-center justify-between py-3 px-4 sm:px-10 bg-amber-100 lg:gap-y-4 gap-y-6 gap-x-4">
+      <div className="flex flex-wrap items-center justify-between py-1 px-4 sm:px-10 bg-amber-100 lg:gap-y-4 gap-y-6 gap-x-4 ">
         <a href="javascript:void(0)">
           <img src={logo1} alt="logo" className="w-14" />
         </a>
@@ -42,8 +43,7 @@ const Navbar = () => {
             </svg>
           </button>
 
-          <ul className="lg:!flex lg:gap-x-10 max-lg:space-y-1 max-lg:fixed max-lg:bg-[#151d20] max-lg:w-2/3 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:px-10 max-lg:py-4 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50">
-
+          <ul className="lg:!flex lg:gap-x-5 max-lg:space-y-0 max-lg:fixed max-lg:bg-[#151d20] max-lg:w-2/3 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:px-10 max-lg:py-4 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50 mb-0">
             <li
               className={
                 location.pathname == "/inicio" ? seleccionado : noSeleccionado
@@ -51,11 +51,13 @@ const Navbar = () => {
             >
               <a
                 href=""
-                className="text-indigo-900 block text-[15px] font-medium no-underline"
+                className="text-indigo-900 block text-[18px] font-medium no-underline"
+                onClick={() => navigate("/inicio")}
               >
                 Inicio
               </a>
             </li>
+            <li className="lg:border-r border-gray-400"></li>
             <li
               className={
                 location.pathname == "/registros-academicos"
@@ -64,12 +66,15 @@ const Navbar = () => {
               }
             >
               <a
-                href="javascript:void(0)"
-                className="text-indigo-900 block text-[15px] font-medium no-underline"
+                onClick={() => navigate("/registros-academicos")}
+                href=""
+                className="text-indigo-900 block text-[18px] font-medium no-underline"
               >
                 Registros Academicos
               </a>
             </li>
+            <li className="lg:border-r border-gray-400"></li>
+
             <li
               className={
                 location.pathname == "/certificados"
@@ -79,35 +84,44 @@ const Navbar = () => {
             >
               <a
                 href="javascript:void(0)"
-                className="text-white block text-[15px] font-medium no-underline"
+                onClick={() => navigate("/certificados")}
+                className="text-indigo-900 block text-[18px] font-medium no-underline"
               >
                 Certificados
               </a>
             </li>
+            <li className="lg:border-r border-gray-400"></li>
+
             <li
               className={
                 location.pathname == "/notas" ? seleccionado : noSeleccionado
               }
             >
               <a
+                onClick={() => navigate("/notas")}
                 href="javascript:void(0)"
-                className="text-white block text-[15px] font-medium no-underline"
+                className="text-indigo-900 block text-[18px] font-medium no-underline"
               >
                 Notas
               </a>
             </li>
+            <li className="lg:border-r border-gray-400"></li>
+
             <li
               className={
                 location.pathname == "/horarios" ? seleccionado : noSeleccionado
               }
             >
               <a
+                onClick={() => navigate("/horarios")}
                 href="javascript:void(0)"
-                className="text-white block text-[15px] font-medium no-underline"
+                className="text-indigo-900 block text-[18px] font-medium no-underline"
               >
                 Horarios
               </a>
             </li>
+            <li className="lg:border-r border-gray-400"></li>
+
             <li
               className={
                 location.pathname == "/documentos-institucionales"
@@ -116,8 +130,9 @@ const Navbar = () => {
               }
             >
               <a
+                onClick={() => navigate("/documentos-institucionales")}
                 href="javascript:void(0)"
-                className="text-white block text-[15px] font-medium no-underline"
+                className="text-indigo-900 block text-[18px] font-medium no-underline"
               >
                 Documentos institucionales
               </a>
