@@ -16,6 +16,7 @@ import DocInstitucionales from "./Components/DocInstitucionales/DocInstitucional
 import GuardarDoc from "./Components/GuardarDoc/GuardarDoc";
 import Horarios from "./Components/Horarios/Horarios";
 import RegistrosAcad from "./Components/RegistrosAcad/RegistrosAcad";
+import VerDocumento from "./Components/VerDocumento/VerDocumento";
 
 import { pdfjs } from "react-pdf";
 
@@ -28,7 +29,7 @@ function App() {
   const location = useLocation();
 
   return (
-    <>
+    <div className="bg-gray-50 h-[100vh]">
       {location.pathname !== "/" && <Navbar />}
       <Routes>
         <Route path="/" element={<Login />} />
@@ -42,8 +43,10 @@ function App() {
         <Route path="/guardar-documento" element={<GuardarDoc />} />
         <Route path="/horarios" element={<Horarios />} />
         <Route path="/registros-academicos" element={<RegistrosAcad />} />
+        <Route path="/subir-documento" element={<GuardarDoc />} />
+        <Route path="/ver-documento" element={<VerDocumento />} />
       </Routes>
-    </>
+    </div>
   );
 }
 

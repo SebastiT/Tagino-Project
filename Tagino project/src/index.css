@@ -1,3 +1,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+Anteriormente, te mencioné cómo agregar estilos personalizados directamente en un archivo CSS estándar, en lugar de un module.css. Aquí tienes un resumen del proceso si decides usar un archivo CSS regular en lugar de module.css.
+
+Opción: Usar un archivo CSS global para react-datepicker
+Crea un archivo CSS para react-datepicker (por ejemplo, datepicker.css) o agrégalo a tu archivo CSS global si ya tienes uno.
+
+Agrega los estilos personalizados en este archivo usando las clases internas de react-datepicker. Estos estilos se aplicarán globalmente sin encapsulación, por lo que afectarán todos los elementos con esas clases.
+
+Ejemplo de datepicker.css
+css
+Copiar código
+/* Contenedor del dropdown de mes y año */
+.react-datepicker__month-year-dropdown,
+.react-datepicker__month-dropdown,
+.react-datepicker__year-dropdown {
+  background-color: #f9fafb; /* Fondo gris claro */
+  border-radius: 8px; /* Bordes redondeados */
+  border: 1px solid #d1d5db; /* Borde gris */
+  padding: 4px;
+}
+
+/* Elemento de mes y año */
+.react-datepicker__month-year-option,
+.react-datepicker__month-option,
+.react-datepicker__year-option {
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #374151; /* Texto gris oscuro */
+}
+
+/* Estilos de hover */
+.react-datepicker__month-year-option:hover,
+.react-datepicker__month-option:hover,
+.react-datepicker__year-option:hover {
+  background-color: #e5e7eb; /* Fondo gris claro */
+  color: #1f2937; /* Texto un poco más oscuro */
+}
+
+/* Elemento activo */
+.react-datepicker__month-year-option--selected,
+.react-datepicker__month-option--selected,
+.react-datepicker__year-option--selected {
+  background-color: #3b82f6; /* Fondo azul para la opción seleccionada */
+  color: white; /* Texto blanco para la opción seleccionada */
+}
