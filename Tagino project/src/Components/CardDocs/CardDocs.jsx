@@ -4,7 +4,7 @@ import { useState } from "react";
 import pdfile from "../../assets/notasEjemplo.pdf";
 import { useNavigate } from "react-router-dom";
 
-const CardDocs = ({ id, type, date }) => {
+const CardDocs = ({ id, type, date, url }) => {
   const [numPages, setNumPages] = useState(0);
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -23,7 +23,7 @@ const CardDocs = ({ id, type, date }) => {
     >
       {/* Sección del PDF (2/3 de la tarjeta) */}
       <div className="h-2/3 flex justify-center bg-gray-100 overflow-hidden">
-        <Document file={pdfile}>
+        <Document file={url}>
           <Page
             pageNumber={1}
             width={300}

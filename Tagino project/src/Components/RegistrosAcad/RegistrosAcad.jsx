@@ -38,6 +38,7 @@ return (
               id={document.id}
               type={document.type}
               date={document.date}
+              url={document.url}
             />
           );
         })}

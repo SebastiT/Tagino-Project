@@ -65,7 +65,7 @@ const VerDocumento = () => {
         <div className="p-5 flex gap-36 justify-center">
           <div className="w-[400px] h-[500px]">
             <div className="min-h-[400px] border">
-              <Document file={pdfile}>
+              <Document file={datos.url}>
                 <Page
                   pageNumber={pageNumber}
                   height={500}
