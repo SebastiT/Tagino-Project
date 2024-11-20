@@ -1,4 +1,5 @@
 import "./App.css";
+import axios from "axios";
 import {
   BrowserRouter as Router,
   Routes,
@@ -44,7 +45,7 @@ function App() {
         <Route path="/horarios" element={<Horarios />} />
         <Route path="/registros-academicos" element={<RegistrosAcad />} />
         <Route path="/subir-documento" element={<GuardarDoc />} />
-        <Route path="/ver-documento" element={<VerDocumento />} />
+        <Route path="/ver-documento/:id" element={<VerDocumento />} />
       </Routes>
     </div>
   );

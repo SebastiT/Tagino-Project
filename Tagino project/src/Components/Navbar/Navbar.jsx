@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <header className="font-[sans-serif] min-h-[80px] tracking-wide relative z-50">
       <div className="flex flex-wrap items-center justify-between py-1 px-4 sm:px-10 bg-amber-100 lg:gap-y-4 gap-y-6 gap-x-4 ">
-        <a href="javascript:void(0)">
+        <a onClick={() => {}}>
           <img src={logo1} alt="logo" className="w-14" />
         </a>
 
@@ -51,8 +51,7 @@ const Navbar = () => {
               }
             >
               <a
-                href=""
-                className="text-indigo-900 block text-[18px] font-medium no-underline"
+                className="text-indigo-900 block text-[18px] font-medium no-underline cursor-pointer"
                 onClick={() => navigate("/inicio")}
               >
                 Inicio
@@ -68,8 +67,7 @@ const Navbar = () => {
             >
               <a
                 onClick={() => navigate("/registros-academicos")}
-                href=""
-                className="text-indigo-900 block text-[18px] font-medium no-underline"
+                className="text-indigo-900 block text-[18px] font-medium no-underline cursor-pointer"
               >
                 Registros Academicos
               </a>
@@ -84,9 +82,8 @@ const Navbar = () => {
               }
             >
               <a
-                href="javascript:void(0)"
                 onClick={() => navigate("/certificados")}
-                className="text-indigo-900 block text-[18px] font-medium no-underline"
+                className="text-indigo-900 block text-[18px] font-medium no-underline cursor-pointer"
               >
                 Certificados
               </a>
@@ -100,8 +97,7 @@ const Navbar = () => {
             >
               <a
                 onClick={() => navigate("/notas")}
-                href="javascript:void(0)"
-                className="text-indigo-900 block text-[18px] font-medium no-underline"
+                className="text-indigo-900 block text-[18px] font-medium no-underline cursor-pointer"
               >
                 Notas
               </a>
@@ -115,8 +111,7 @@ const Navbar = () => {
             >
               <a
                 onClick={() => navigate("/horarios")}
-                href="javascript:void(0)"
-                className="text-indigo-900 block text-[18px] font-medium no-underline"
+                className="text-indigo-900 block text-[18px] font-medium no-underline cursor-pointer"
               >
                 Horarios
               </a>
@@ -132,15 +127,19 @@ const Navbar = () => {
             >
               <a
                 onClick={() => navigate("/documentos-institucionales")}
-                href="javascript:void(0)"
-                className="text-indigo-900 block text-[18px] font-medium no-underline"
+                className="text-indigo-900 block text-[18px] font-medium no-underline cursor-pointer"
               >
                 Documentos institucionales
               </a>
             </li>
           </ul>
         </div>
-        <button className="flex items-center gap-2 px-4 py-2 bg-customBlue text-white rounded-full hover:bg-indigo-700 transition-colors" onClick={()=>{navigate("/subir-documento")}}>
+        <button
+          className="flex items-center gap-2 px-4 py-2 bg-customBlue text-white rounded-full hover:bg-indigo-700 transition-colors"
+          onClick={() => {
+            navigate("/subir-documento");
+          }}
+        >
           <FaPlus />
           Subir Documento
         </button>
